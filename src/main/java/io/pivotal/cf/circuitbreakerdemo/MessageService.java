@@ -13,7 +13,7 @@ public class MessageService {
 
     @HystrixCommand(fallbackMethod = "fallbackMessage")
     public Message remoteMessage() {
-        return restTemplate.getForObject("http://workshop/", Message.class);
+        return restTemplate.getForObject("https://workshop/", Message.class);
     }
 
     private Message fallbackMessage() {
